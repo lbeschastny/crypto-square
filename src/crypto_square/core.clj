@@ -28,8 +28,9 @@
   [^Long n]
   {:pre  [(even? n)]}
   (let [len   (/ n 2)
-        comb  (- (* len len) 1)]
-    (map  (comp to-crypto-square
+        comb  (- (* len len) 1)
+        fmap  (if (< n 6) map pmap)]
+    (fmap (comp to-crypto-square
                 (partial partition len)
                 (partial cons 0))
           (combo/selections (range 4) comb))))
