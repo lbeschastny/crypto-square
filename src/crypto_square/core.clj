@@ -8,7 +8,7 @@
   (map (partial map (partial = ind)) mat))
 
 (defn- to-crypto-square [mat]
-  (let [[tl tr bl br] (map compile-crypto-square
+  (let [[tl tr br bl] (map compile-crypto-square
                            (iterate rotate mat)
                            (range))]
     (concat (map concat tl tr)
