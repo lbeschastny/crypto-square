@@ -4,9 +4,14 @@
 
   [1]: http://haskell98.blogspot.ru/2014/10/blog-post_10.html
 
+## Installation
+
+    git clone https://github.com/lbeschastny/crypto-square.git
+    cd crypto-square
+
 ## Usage
 
-FIXME
+    lein run 8
 
 ## License
 
