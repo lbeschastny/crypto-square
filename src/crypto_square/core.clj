@@ -13,7 +13,7 @@
   (map (partial map (partial = ind)) mat))
 
 (defn- to-crypto-square
-  "Builds (2k x 2x) Boolean matrix
+  "Builds (2k x 2k) Boolean matrix
    from (k x k) Number matrix"
   [mat]
   (let [[tl tr br bl] (map compile-sector
