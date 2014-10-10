@@ -1,21 +1,29 @@
 (ns crypto-square.core
   (:require [clojure.math.combinatorics :as combo]))
 
-(defn- rotate [mat]
+(defn- rotate
+  "Rotates mat Matrix clockwise"
+  [mat]
   (apply map list (reverse mat)))
 
-(defn- compile-crypto-square [mat ind]
+(defn- compile-sector
+  "Converts (k x k) Number matrix
+   to (k x k) Boolean matrix"
+  [mat ind]
   (map (partial map (partial = ind)) mat))
 
-(defn- to-crypto-square [mat]
-  (let [[tl tr br bl] (map compile-crypto-square
+(defn- to-crypto-square
+  "Builds (2k x 2x) Boolean matrix
+   from (k x k) Number matrix"
+  [mat]
+  (let [[tl tr br bl] (map compile-sector
                            (iterate rotate mat)
                            (range))]
     (concat (map concat tl tr)
             (map concat bl br))))
 
 (defn generate
-  "Generates all nxn crypto-squares.
+  "Generates all (n x n) crypto-squares.
    Returns a Lazy Sequence."
   [^Long n]
   {:pre  [(even? n)]}
