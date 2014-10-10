@@ -11,7 +11,7 @@
 
 ## Usage
 
-    lein run 8
+    lein run 4
 
 ## License
 
