@@ -15,8 +15,9 @@
             (map concat bl br))))
 
 (defn generate
-  "Generates crypto-square"
-  [n]
+  "Generates all nxn crypto-squares.
+   Returns a Lazy Sequence."
+  [^Long n]
   {:pre  [(even? n)]}
   (let [len   (/ n 2)
         comb  (- (* len len) 1)]
@@ -26,7 +27,7 @@
           (combo/selections (range 4) comb))))
 
 (defn -main
-  "Generates and prints crypto-square"
+  "Generates and prints all nxn crypto-squares."
   [^String n]
   (doseq [mat (generate (read-string n))]
     (doseq [row mat]
