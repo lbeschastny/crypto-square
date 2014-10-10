@@ -13,7 +13,7 @@
 
     lein run 4
 
-Example output for `n = 3`:
+Example output for `n = 6`:
 
 ```
 ╔═══════════════════╗
