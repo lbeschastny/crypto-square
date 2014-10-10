@@ -13,6 +13,19 @@
 
     lein run 4
 
+Example output for `n = 3`:
+
+```
+╔═══════════════════╗
+║ ██    ██    ██    ║
+║       ██          ║
+║    ██             ║
+║          ██    ██ ║
+║    ██             ║
+║             ██    ║
+╚═══════════════════╝
+```
+
 ## License
 
 Copyright © 2014 Leonid Beschastny

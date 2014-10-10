@@ -36,10 +36,15 @@
 
 (defn -main
   "Generates and prints all nxn crypto-squares."
-  [^String n]
-  (doseq [mat (generate (read-string n))]
-    (doseq [row mat]
-      (->>  (map #(if % "X" ".") row)
-            (apply str)
-            println))
-    (println)))
+  [^String arg]
+  (let [n      (read-string arg)
+        border (apply str (repeat (* 3 n) "═"))
+        upper  (str "╔═" border "╗")
+        lower  (str "╚═" border "╝")]
+    (doseq [mat (generate n)]
+      (println upper)
+      (doseq [row mat]
+        (print "║ ")
+        (doseq [el row] (print (if el "██ " "   ")))
+        (println "║"))
+      (println lower))))
