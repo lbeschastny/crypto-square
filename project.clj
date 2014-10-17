@@ -6,4 +6,4 @@
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [org.clojure/math.combinatorics "0.0.8"]]
   :main crypto-square.core
-  :profiles { :build { :aot :all } })
+  :profiles { :uberjar { :aot :all } })
